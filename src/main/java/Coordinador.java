@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import java.rmi.Naming;
 import java.rmi.Remote;
 import java.rmi.registry.Registry;
 import javax.swing.JOptionPane;
@@ -11,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author evert
  */
-public class Servidor {
+public class Coordinador {
 
     /**
      * @param args the command line arguments
@@ -19,6 +20,12 @@ public class Servidor {
     public static void main(String[] args) {
         
         try{
+            
+            
+            monitorizacion c= (monitorizacion)Naming.lookup("//localHost/monitorizacion");
+            
+            
+            
             Registry r=java.rmi.registry.LocateRegistry.createRegistry(1099);
             r.rebind("monitorizacion", (Remote) new RMI());
             JOptionPane.showMessageDialog(null, "Servidor conectados correctamente");
