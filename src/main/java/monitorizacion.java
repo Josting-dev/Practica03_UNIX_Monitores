@@ -10,10 +10,17 @@ import java.util.List;
  *
  * @author evert
  */
-public interface monitorizacion extends Remote{
+public interface monitorizacion extends Remote
+{
+    
     public String id(String x, String z ) throws RemoteException;
     
- 
+    public String iniMonitor(String x) throws RemoteException;
     
+    public String loadMonitor(String y) throws RemoteException;
     
+    public String iniClient(String r) throws RemoteException;
+    
+    public String getLoadAvg (String w) throws RemoteException;
+
 }

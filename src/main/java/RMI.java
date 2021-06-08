@@ -20,10 +20,33 @@ public class RMI extends UnicastRemoteObject implements monitorizacion{
         
         String estado=x.concat("-");
         estado=estado.concat(y);
-        
-        
-        
         return estado;
+    }
+    
+    public String iniMonitor (String x) throws RemoteException 
+    {
+        
+    
+    }
+
+    @Override
+    public String iniMonitor(String x) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String loadMonitor(String y) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String iniClient(String r) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getLoadAvg(String w) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
    
