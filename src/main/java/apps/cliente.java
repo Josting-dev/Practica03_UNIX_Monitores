@@ -10,7 +10,7 @@ package apps;
  * @author evert
  */
 import javax.swing.JOptionPane;
-import interfaces.objetoCoordinador;
+import interfaces.objCoordinador;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -18,22 +18,21 @@ import java.rmi.registry.Registry;
 import java.util.Scanner;
 
 public class cliente {
-
     public static void main(String[] args) throws RemoteException, NotBoundException {
 
         int segundos;
-        String ip = "localhost";
+        
 
         try {
             //REGISTRO DE LAS FUNCIONES
-            Registry registry = LocateRegistry.getRegistry(ip, 1099);
-            objetoCoordinador miCoordinador = (objetoCoordinador) registry.lookup("miCoordinador");
+            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+            objCoordinador miCoordinador = (objCoordinador) registry.lookup("miCoordinador");
 
             //VERIFICAR CUANTOS MONITORES HAY FUNCIONANDO
             if (miCoordinador.iniClient() > 0) {
                 //OBTENER EL INTERVALO DE MEDICION
                 
-                System.out.print("Segundos:");
+                System.out.print("Segundos: ");
                 Scanner leer = new Scanner(System.in);
                 segundos = leer.nextInt();
 

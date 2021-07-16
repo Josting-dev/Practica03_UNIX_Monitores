@@ -8,17 +8,22 @@ package interfaces;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface objetoCoordinador extends Remote {
+public interface objCoordinador extends Remote {
 
     //DEVUELVE EL INTERVALO DE TIEMPO
-    int iniMonitor(String id) throws RemoteException; //LLAMADA POR LOS MONITORES
+    int iniMonitor(String id) throws RemoteException; 
+    //registra los monitores en el coordinador
 
-    //ENVIA EL VALOR DE LOADAVG DEL MONITOR
-    void loadMonitor(String loadavg) throws RemoteException; //LLAMADA POR LOS MONITORES
+    
+    void loadMonitor(String loadavg) throws RemoteException; 
+    //los monitores llaman a este metodo, le envian el loadavg
 
-    //DEVUELVE LA CANTIDAD DE MONITORES QUE HAY FUNCIONANDO
-    int iniClient() throws RemoteException; //LLAMADA POR LOS CLIENTES
+    
+    int iniClient() throws RemoteException; 
+    //el cliente llama este metodo y deviuelve los monitores conectados. el resultado es guardado en la cache del coordinador
+
 
     //OBTIENE EL VALOR DE AVG DE LOS MONITORES
-    String getLoadAvg() throws RemoteException; //LLAMADA POR LOS CLIENTES
+    String getLoadAvg() throws RemoteException; 
+    //es llamado por el cliente, y consigue el valor avg de los monitores
 }
