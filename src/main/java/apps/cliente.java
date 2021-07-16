@@ -32,9 +32,10 @@ public class cliente {
             if (miCoordinador.iniClient() > 0) {
                 //OBTENER EL INTERVALO DE MEDICION
                 
-                System.out.print("Segundos: ");
+                /*System.out.print("Segundos: ");
                 Scanner leer = new Scanner(System.in);
-                segundos = leer.nextInt();
+                segundos = leer.nextInt();*/
+                segundos =  Integer.parseInt(JOptionPane.showInputDialog(null, "Segundos: "));
 
                 //DEVUELVE LA CANTIDAD DE MONITORES ACTIVOS
                 while (true) {
